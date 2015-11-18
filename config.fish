@@ -73,6 +73,7 @@ alias gr='git reset'
 alias gl="git log --no-merges -8 --date=iso --pretty='format:%C(blue)%h %C(magenta)%cd %C(cyan)%s %C(white)%d'"
 alias gch="git checkout"
 alias gcom="git commit"
+alias vi='/usr/local/bin/vim'
 alias vimr='open -a VimR'
 alias xcode='open -a Xcode'
 alias appcode='open -a AppCode'

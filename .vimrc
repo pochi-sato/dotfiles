@@ -14,6 +14,14 @@ syntax on
 set nu
 set ic "検索時大文字小文字を意識しない
 
+set laststatus=2
+
+"---------------------------------------------------
+let g:lightline = {
+      \ 'colorscheme': ''
+      \ }
+"---------------------------------------------------
+
 
 set ruler
 set nowrap
@@ -107,9 +115,9 @@ nnoremap # #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
 
-nnoremap ww :<C-u>vs<CR> "垂直分割"
-nnoremap wh :<C-u>sp<CR> "水平分割"
-nnoremap wn <C-w>w "次のウィンドウに移動"
+nnoremap gww :<C-u>vs<CR> "垂直分割"
+nnoremap gwh :<C-u>sp<CR> "水平分割"
+nnoremap gwn <C-w>w "次のウィンドウに移動"
 nnoremap tt :<C-u>tabnew<CR> "新規タブ"
 nnoremap tn gt "次のタブへ切り替え"
 nnoremap tp gT "前のタブへ切り替え"
@@ -148,6 +156,15 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
 
 NeoBundle 'scrooloose/nerdtree'
+
+"----------------------------------------------------
+" tree 表示
+"----------------------------------------------------
+NeoBundleLazy "scrooloose/nerdtree", {
+      \ "autoload" : { "commands": ["NERDTreeToggle"] }}
+if ! empty(neobundle#get("nerdtree"))
+  nn <Leader>N :NERDTreeToggle<CR>
+endif
 
 call neobundle#end()
 
