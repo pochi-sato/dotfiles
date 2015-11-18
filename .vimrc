@@ -6,6 +6,15 @@ augroup MyAutoCmd
 augroup END
 
 
+" markdownのハイライトを有効にする
+set syntax=markdown
+au BufRead,BufNewFile *.md set filetype=markdown
+
+syntax on
+set nu
+set ic "検索時大文字小文字を意識しない
+
+
 set ruler
 set nowrap
 set whichwrap=h,l
@@ -53,7 +62,7 @@ else
 endif
 
 " Swapファイル？Backupファイル？前時代的すぎ
-" " なので全て無効化する
+" なので全て無効化する
 set nowritebackup
 set nobackup
 set noswapfile
@@ -65,13 +74,13 @@ set list                " 不可視文字の可視化
 set number              " 行番号の表示
 set wrap                " 長いテキストの折り返し
 set textwidth=0         " 自動的に改行が入るのを無効化
-"set colorcolumn=80      " その代わり80文字目にラインを入れる
+set colorcolumn=80      " その代わり80文字目にラインを入れる
 
 " 前時代的スクリーンベルを無効化
 set t_vb=
 set novisualbell
-"
-" " デフォルト不可視文字は美しくないのでUnicodeで綺麗に
+
+" デフォルト不可視文字は美しくないのでUnicodeで綺麗に
 set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:.
 
 "---------------------------------------------------
@@ -79,11 +88,11 @@ set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:.
 "---------------------------------------------------
 " 入力モード中に素早くjjと入力した場合はESCとみなす
 inoremap jj <Esc>
-"
-" " ESCを二回押すことでハイライトを消す
+
+" ESCを二回押すことでハイライトを消す
 nmap <silent> <Esc><Esc> :nohlsearch<CR>
-"
-" " カーソル下の単語を * で検索
+
+" カーソル下の単語を * で検索
 vnoremap <silent> * "vy/\V<C-r>=substitute(escape(@v, '\/'), "\n", '\\n', 'g')<CR><CR>
 
 
@@ -99,10 +108,6 @@ nnoremap g* g*zz
 nnoremap g# g#zz
 
 
-
-
-
-
 "---------------------------------------------------
 " neobundle
 "----------------------------------------------------
@@ -115,23 +120,28 @@ endif
 
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
+
+""GitHub以外のGitリポジトリにあるプラグインを利用する場合
+"NeoBundle 'git://git.wincent.com/command-t.git'
+
+"for unit.vim
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimproc'
+
+NeoBundle 'Shougo/vimfiler'
+
+NeoBundle 'scrooloose/nerdtree'
+
 call neobundle#end()
 
 filetype plugin indent on     " Required!
 
 " Installation check.
-if neobundle#exists_not_installed_bundles()
-  echomsg 'Not installed bundles : ' .
-        \ string(neobundle#get_not_installed_bundle_names())
-  echomsg 'Please execute ":NeoBundleInstall" command.'
-  "finish
-endif
+"if neobundle#exists_not_installed_bundles()
+"  echomsg 'Not installed bundles : ' .
+"        \ string(neobundle#get_not_installed_bundle_names())
+"  echomsg 'Please execute ":NeoBundleInstall" command.'
+"  "finish
+"endif
 
-""GitHub以外のGitリポジトリにあるプラグインを利用する場合
-NeoBundle 'git://git.wincent.com/command-t.git'
-
-"----------------------------------------------------
-" unit.vim
-"----------------------------------------------------
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc'
+NeoBundleCheck
