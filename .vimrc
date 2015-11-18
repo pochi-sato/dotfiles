@@ -18,8 +18,8 @@ set laststatus=2
 
 "---------------------------------------------------
 let g:lightline = {
-      \ 'colorscheme': ''
-      \ }
+        \ 'colorscheme': 'wombat',
+        \ }
 "---------------------------------------------------
 
 
@@ -152,10 +152,17 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
 "バグるので使ってない
 "NeoBundle 'Shougo/vimproc'
-
 NeoBundle 'Shougo/vimfiler'
-
-NeoBundle 'scrooloose/nerdtree'
+"lazyで実行
+"NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'wincent/command-t'
+NeoBundle 'wesleyche/SrcExpl'
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'majutsushi/tagbar'
+call neobundle#end()
 
 "----------------------------------------------------
 " tree 表示
@@ -165,8 +172,6 @@ NeoBundleLazy "scrooloose/nerdtree", {
 if ! empty(neobundle#get("nerdtree"))
   nn <Leader>N :NERDTreeToggle<CR>
 endif
-
-call neobundle#end()
 
 " Required:
 filetype plugin indent on
