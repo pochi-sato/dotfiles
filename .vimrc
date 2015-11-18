@@ -107,18 +107,34 @@ nnoremap # #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
 
+nnoremap ww :<C-u>vs<CR> "垂直分割"
+nnoremap wh :<C-u>sp<CR> "水平分割"
+nnoremap wn <C-w>w "次のウィンドウに移動"
+nnoremap tt :<C-u>tabnew<CR> "新規タブ"
+nnoremap tn gt "次のタブへ切り替え"
+nnoremap tp gT "前のタブへ切り替え"
 
 "---------------------------------------------------
 " neobundle
 "----------------------------------------------------
+
+"nerdtree
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
+
 set nocompatible               " Be iMproved
 filetype off                   " Required!
 
 if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+    set nocompatible               " Be iMproved
+      " Required:
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
+" Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
+" Let NeoBundle manage NeoBundle
+" Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 ""GitHub以外のGitリポジトリにあるプラグインを利用する場合
@@ -126,7 +142,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 "for unit.vim
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc'
+"バグるので使ってない
+"NeoBundle 'Shougo/vimproc'
 
 NeoBundle 'Shougo/vimfiler'
 
@@ -134,7 +151,11 @@ NeoBundle 'scrooloose/nerdtree'
 
 call neobundle#end()
 
-filetype plugin indent on     " Required!
+" Required:
+filetype plugin indent on
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
 
 " Installation check.
 "if neobundle#exists_not_installed_bundles()
@@ -143,5 +164,3 @@ filetype plugin indent on     " Required!
 "  echomsg 'Please execute ":NeoBundleInstall" command.'
 "  "finish
 "endif
-
-NeoBundleCheck
