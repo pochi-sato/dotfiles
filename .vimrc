@@ -11,10 +11,13 @@ set syntax=markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 
 syntax on
+colorscheme torte
+"colorscheme pablo
+highlight Normal ctermbg=none
 set nu
 set ic "検索時大文字小文字を意識しない
-
 set laststatus=2
+set t_Co=256
 
 "---------------------------------------------------
 let g:lightline = {
@@ -22,9 +25,8 @@ let g:lightline = {
         \ }
 "---------------------------------------------------
 
-
 set ruler
-set nowrap
+" set nowrap
 set whichwrap=h,l
 set nowrapscan
 set history=2000
@@ -51,7 +53,7 @@ cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 "---------------------------------------------------
 set shiftround          " '<'や'>'でインデントする際に'shiftwidth'の倍数に丸める
 set infercase           " 補完時に大文字小文字を区別しない
-set virtualedit=all     " カーソルを文字が存在しない部分でも動けるようにする
+" set virtualedit=all     " カーソルを文字が存在しない部分でも動けるようにする
 set hidden              " バッファを閉じる代わりに隠す（Undo履歴を残すため）
 set switchbuf=useopen   " 新しく開く代わりにすでに開いてあるバッファを開く
 set showmatch           " 対応する括弧などをハイライト表示する
@@ -78,18 +80,18 @@ set noswapfile
 "---------------------------------------------------
 " 表示
 "---------------------------------------------------
-set list                " 不可視文字の可視化
+" set list                " 不可視文字の可視化
 set number              " 行番号の表示
 set wrap                " 長いテキストの折り返し
 set textwidth=0         " 自動的に改行が入るのを無効化
-set colorcolumn=80      " その代わり80文字目にラインを入れる
+set colorcolumn=95      " その代わり95文字目にラインを入れる
 
 " 前時代的スクリーンベルを無効化
 set t_vb=
 set novisualbell
 
 " デフォルト不可視文字は美しくないのでUnicodeで綺麗に
-set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:.
+" set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:.
 
 "---------------------------------------------------
 " キーバインド
@@ -162,6 +164,7 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'majutsushi/tagbar'
+NeoBundle 'Lokaltog/vim-powerline'
 call neobundle#end()
 
 "----------------------------------------------------

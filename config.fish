@@ -1,3 +1,26 @@
+# ~/.config/fish/config.fish
+# gcloud
+set -x PATH $HOME/google/google-cloud-sdk/bin $PATH
+set -x PATH $HOME/google/appengine-java-sdk-1.9.30/bin/ $PATH
+# homebrew
+#set -x PATH /usr/local/bin /usr/local/sbin $PATH
+ 
+# phpenv
+#eval "$(phpenv init -)"
+#set -x PATH $HOME/.phpenv/bin $PATH
+#set -x PATH $HOME/.phpenv/shims $PATH
+#phpenv rehash >/dev/null ^&1
+ 
+# rbenv
+#eval "$(rbenv init -)";
+set -x PATH $HOME/.rbenv/bin $PATH
+set -x PATH $HOME/.rbenv/shims $PATH
+rbenv rehash >/dev/null ^&1
+ 
+# npm
+#export PATH="/usr/local/share/npm/bin:$PATH"
+#set -x PATH /usr/local/share/npm/bin $PATH
+
 # Path to your oh-my-fish.
 set -g OMF_PATH $HOME/.local/share/omf
 
@@ -73,8 +96,15 @@ alias gr='git reset'
 alias gl="git log --no-merges -8 --date=iso --pretty='format:%C(blue)%h %C(magenta)%cd %C(cyan)%s %C(white)%d'"
 alias gch="git checkout"
 alias gcom="git commit"
+
 alias vi='/usr/local/bin/vim'
 alias vimr='open -a VimR'
 alias xcode='open -a Xcode'
 alias appcode='open -a AppCode'
-alias webstorm='open -a WebStorm10'
+alias webstorm='open -a WebStorm'
+alias m='cd ~/Dropbox/share/memoBox;vim'
+
+## temporaly
+alias sabo='cd ~/devHome/sabo'
+alias gswift='gcloud compute --project "gentle-edition-114108" ssh --zone "asia-east1-a" "swift-ubuntu-14-04"'
+alias gnode='gcloud compute --project "gentle-edition-114108" ssh --zone "asia-east1-a" "nodejs-1"'
