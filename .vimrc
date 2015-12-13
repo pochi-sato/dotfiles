@@ -165,6 +165,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'vim-scripts/vim-auto-save'
 call neobundle#end()
 
 "----------------------------------------------------
