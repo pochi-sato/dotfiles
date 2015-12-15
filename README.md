@@ -14,12 +14,21 @@ lrwxr-xr-x    1 pochi  staff     35  1 17 15:10 .zshrc -> /Users/pochi/.zprezto/
 
 ### 張り方
 
-ln -sf ~/dotfiles/.vimrc ~/.vimrc
+`ln -sf ~/dotfiles/.vimrc ~/.vimrc`
 
 - 対象は以下全て。
 
+```
 ln -sf ~/dotfiles/.bash_profile ~/.bash_profile
 ln -sf ~/dotfiles/.bashrc ~/.bashrc
 ln -sf ~/dotfiles/.zprezto ~/.zprezto
 ln -sf ~/dotfiles/.vim ~/.vim
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
+```
+
+# jsの入力補助について
+
+```
+npm install
+cd $HOME/.vim/bundle/tern_for_vim
+```

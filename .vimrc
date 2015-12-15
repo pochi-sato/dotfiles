@@ -170,6 +170,7 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'vim-scripts/vim-auto-save'
+NeoBundle 'marijnh/tern_for_vim'
 call neobundle#end()
 
 "----------------------------------------------------

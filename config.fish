@@ -93,6 +93,8 @@ alias gbv='git branch -va'
 alias ga='git add'
 alias gap='git add -p'
 alias gr='git reset'
+alias grsh='git reset --soft HEAD~'
+alias grh='git reset head'
 alias gl="git log --no-merges -8 --date=iso --pretty='format:%C(blue)%h %C(magenta)%cd %C(cyan)%s %C(white)%d'"
 alias gch="git checkout"
 alias gcom="git commit"
