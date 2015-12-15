@@ -4,6 +4,8 @@ set -x PATH $HOME/google/google-cloud-sdk/bin $PATH
 set -x PATH $HOME/google/appengine-java-sdk-1.9.30/bin/ $PATH
 # homebrew
 #set -x PATH /usr/local/bin /usr/local/sbin $PATH
+#nodebrew
+set -x PATH $HOME/.nodebrew/current/bin $PATH
  
 # phpenv
 #eval "$(phpenv init -)"
