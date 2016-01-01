@@ -6,6 +6,8 @@ set -x PATH $HOME/google/appengine-java-sdk-1.9.30/bin/ $PATH
 #set -x PATH /usr/local/bin /usr/local/sbin $PATH
 #nodebrew
 set -x PATH $HOME/.nodebrew/current/bin $PATH
+# emscripten
+set -x PATH /opt/emsdk/emscripten/1.35.0 $PATH
  
 # phpenv
 #eval "$(phpenv init -)"
