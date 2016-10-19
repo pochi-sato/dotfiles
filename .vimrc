@@ -1,3 +1,8 @@
+" fish由来のエラー殺す
+if $SHELL =~ 'fish'
+  set shell=/bin/sh
+endif
+
 " release autogroup in MyAutoCmd
 " マクロなどはすべて'MyAutoCmd'というグループに属しているのでそれの
 " 初期化（リセット）処理
@@ -140,6 +145,14 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 set nocompatible               " Be iMproved
 filetype off                   " Required!
 
+
+" scala format
+let g:scala_sort_across_groups=1
+"au BufEnter *.scala setl formatprg=java\ -jar\ /Users/takuto/scalariform/scalariform.jar\ -f\ -q\ --preferenceFile=/Users/takuto/scalariform/scalariform-formatter.properties\ --stdin\ --stdout
+au BufEnter *.scala setl formatprg=java\ -jar\ /Users/takuto/scalariform/scalariform.jar\ -f\ -q\ +compactControlReadability\ +alignParameters\ +alignSingleLineCaseStatements\ +doubleIndentClassDeclaration\ +preserveDanglingCloseParenthesis\ +rewriteArrowSymbols\ +preserveSpaceBeforeArguments\ --stdin\ --stdout
+nmap <leader>m :SortScalaImports<CR>gggqG<C-o><C-o><leader><w>
+
+
 if has('vim_starting')
     set nocompatible               " Be iMproved
       " Required:
@@ -154,6 +167,10 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 ""GitHub以外のGitリポジトリにあるプラグインを利用する場合
 "NeoBundle 'git://git.wincent.com/command-t.git'
+
+"" scala用syntax highlight
+NeoBundle 'derekwyatt/vim-scala'
+
 
 "for unit.vim
 NeoBundle 'Shougo/unite.vim'
@@ -172,7 +189,7 @@ NeoBundle 'majutsushi/tagbar'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'vim-scripts/vim-auto-save'
 "NeoBundle 'marijnh/tern_for_vim'
-"NeoBundle 'mattn/emmet-vim'
+NeoBundle 'mattn/emmet-vim'
 call neobundle#end()
 
 "----------------------------------------------------
@@ -191,9 +208,9 @@ filetype plugin indent on
 NeoBundleCheck
 
 " Installation check.
-"if neobundle#exists_not_installed_bundles()
-"  echomsg 'Not installed bundles : ' .
-"        \ string(neobundle#get_not_installed_bundle_names())
-"  echomsg 'Please execute ":NeoBundleInstall" command.'
-"  "finish
-"endif
+if neobundle#exists_not_installed_bundles()
+  echomsg 'Not installed bundles : ' .
+        \ string(neobundle#get_not_installed_bundle_names())
+  echomsg 'Please execute ":NeoBundleInstall" command.'
+  finish
+endif
