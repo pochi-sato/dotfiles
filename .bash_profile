@@ -1,7 +1,7 @@
-echo "this is .bash_profile"
-if [ -f ~/.bashrc ] ; then
-. ~/.bashrc
-fi
-#PATH=/usr/local/mysql/bin/
-#echo "パスは" $PATH
-#eval "$(rbenv init -)"
+echo "Reading .bash_profile ..."
+
+# for neovim
+export XDG_CONFIG_HOME=$HOME/.neovim/config
+
+# for .bashrc
+test -r ~/.bashrc && . ~/.bashrc
