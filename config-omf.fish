@@ -109,6 +109,8 @@ alias xcode='open -a Xcode'
 alias appcode='open -a AppCode'
 alias webstorm='open -a WebStorm'
 alias m='cd ~/Dropbox/share/memoBox;vim'
+alias lt='ls -lt'
+alias lr='ls -ltr'
 
 ## temporaly
 alias sabo='cd ~/devHome/sabo'
