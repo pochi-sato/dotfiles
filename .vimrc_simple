@@ -34,7 +34,10 @@ let g:lightline = {
 
 
 " Key Bind:
-nmap <silent> <Esc><Esc> :nohlsearch<CR> "ESCを二回押すことでハイライトを消す
+" ESCを二回押すことでハイライトを消す
+nmap <silent> <Esc><Esc> :nohlsearch<CR>
+" 保存時にsudo権限で無理やり保存
+cnoremap w!! w !sudo tee > /dev/null %<CR> :e!<CR>
 
 
 " Neo Bundle:
