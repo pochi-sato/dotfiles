@@ -1,13 +1,18 @@
 # ~/.config/fish/config.fish
 # gcloud
-set -x PATH $HOME/google/google-cloud-sdk/bin $PATH
-set -x PATH $HOME/google/appengine-java-sdk-1.9.30/bin/ $PATH
+#set -x PATH $HOME/google/google-cloud-sdk/bin $PATH
+#set -x PATH $HOME/google/appengine-java-sdk-1.9.30/bin/ $PATH
 # homebrew
 #set -x PATH /usr/local/bin /usr/local/sbin $PATH
-#nodebrew
+
+# rust
+set -x PATH $HOME/.cargo/bin $PATH
+
+# nodebrew
 set -x PATH $HOME/.nodebrew/current/bin $PATH
+
 # emscripten
-set -x PATH /opt/emsdk/emscripten/1.35.0 $PATH
+#set -x PATH /opt/emsdk/emscripten/1.35.0 $PATH
  
 # phpenv
 #eval "$(phpenv init -)"
@@ -17,9 +22,9 @@ set -x PATH /opt/emsdk/emscripten/1.35.0 $PATH
  
 # rbenv
 #eval "$(rbenv init -)";
-set -x PATH $HOME/.rbenv/bin $PATH
-set -x PATH $HOME/.rbenv/shims $PATH
-rbenv rehash >/dev/null ^&1
+#set -x PATH $HOME/.rbenv/bin $PATH
+#set -x PATH $HOME/.rbenv/shims $PATH
+#rbenv rehash >/dev/null ^&1
  
 # npm
 #export PATH="/usr/local/share/npm/bin:$PATH"
@@ -58,9 +63,9 @@ set -U fish_key_bindings fish_default_key_bindings
 #Theme 'robbyrussell'
 
 # binding
-function fish_user_key_bindings
-  bind \cr peco_select_history # Bind for prco history to Ctrl+r
-end
+#function fish_user_key_bindings
+#  bind \cr peco_select_history # Bind for prco history to Ctrl+r
+#end
 
 # alias
 ## ポート確認いつも忘れるので
@@ -85,7 +90,6 @@ alias gch="git checkout"
 alias gcom="git commit"
 
 ## Editor
-alias vi='/usr/local/bin/vim'
 alias xcode='open -a Xcode'
 alias appcode='open -a AppCode'
 alias webstorm='open -a WebStorm'
