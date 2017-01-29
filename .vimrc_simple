@@ -18,7 +18,10 @@ set backspace=indent,eol,start " バックスペースでなんでも消せる�
 
 " Appearance:
 set number              " 行番号の表示
-set syntax=markdown " MarkDown Highlight
+set syntax=markdown     " MarkDown Highlight
+set tabstop=2           " タブが妙に長くなることを防ぐ
+set autoindent          " インデントを貼り付け時などいい感じにしてくれる
+
 au BufRead,BufNewFile *.md set filetype=markdown " MarkDown Highlight
 
 syntax on
