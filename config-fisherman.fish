@@ -23,8 +23,8 @@ set -x PATH $HOME/.nodebrew/current/bin $PATH
 # rbenv
 #eval "$(rbenv init -)";
 #set -x PATH $HOME/.rbenv/bin $PATH
-#set -x PATH $HOME/.rbenv/shims $PATH
-#rbenv rehash >/dev/null ^&1
+set -x PATH $HOME/.rbenv/shims $PATH
+rbenv rehash >/dev/null ^&1
  
 # npm
 #export PATH="/usr/local/share/npm/bin:$PATH"
